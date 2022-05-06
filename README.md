@@ -17,7 +17,7 @@ Request data, please contact me by e-mail: brainiac_tra09@qq.com
           - DNN（五层）: 0.8764842415303271 | Score: 0.8323
         3. 总结：人工神经网络效果不如XGB，通过损失函数绘图发现有过拟合现象，验证集效果远不及训练集。
 -----
-- [x] Version 3: CMTR_CHURN_PR_V3 TabNet 使用无监督模型进行预训练 
+- [x] Version 3: CMTR_CHURN_PR_V3_ TabNet 使用无监督模型进行预训练 
   - 遇到的问题：AUC和准确率提升依旧很难，模型效果比较差。AUC: 0.6511318268787747 | Score: 0.74
     - 解决思路：使用PCA主成分分析法，进行特征降维, 准确率依旧下降，出现特征工程无效的情况，原因未知。AUC: 0.5801404503216607
 
