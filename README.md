@@ -1,4 +1,4 @@
-# Debt-Prediction-Classification
+# Churn Data Analysis
 使用比赛方提供的脱敏数据，进行客户信贷流失预测。**根据比赛方要求，无法开源数据。**
 Request data, please contact me by e-mail: brainiac_tra09@qq.com
 - [x] Version 1: CMTR_CHURN_PR 传统机器学习 **XGBoost** 
