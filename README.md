@@ -28,7 +28,7 @@
     4. AutoGluon 直接输出leaderboard，并使用TOP3的模型进行预测。
 ------
 - [x] Version 5: SMTR_CHURN_PR_V5 变量组合新变量进一步降维 | 随机森林权重筛选变量
-  - 经过特征选择（TOP12）。AUC: 
+  - 经过特征选择（TOP12），通过SMOTE方法平衡正负样本（1:1）。AUC: 0.74977
   
 
 
