@@ -26,7 +26,9 @@
     2. RandomForest: AUC: 0.6046600198503995 | Score: 0.7712606303151576
     3. TabNet 无监督预训练， AUC: 0.7872822945848122
     4. AutoGluon 直接输出leaderboard，并使用TOP3的模型进行预测。
-
+------
+- [x] Version 5: SMTR_CHURN_PR_V5 变量组合新变量进一步降维 | 随机森林权重筛选变量
+  - 经过特征选择（TOP12）。AUC: 
   
 
 
