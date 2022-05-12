@@ -1,5 +1,6 @@
 # Churn Data Analysis
 使用比赛方提供的脱敏数据，进行客户信贷流失预测。**根据比赛方要求，无法开源数据。**
+二分类问题
 
 - [x] Version 1: CMTR_CHURN_PR 传统机器学习 **XGBoost** 
   - AUC: 0.6145
@@ -27,9 +28,15 @@
     3. TabNet 无监督预训练， AUC: 0.7872822945848122
     4. AutoGluon 直接输出leaderboard，并使用TOP3的模型进行预测。
 ------
-- [x] Version 5: SMTR_CHURN_PR_V5 变量组合新变量进一步降维 | 随机森林权重筛选变量
+- [x] Version 5: CMTR_CHURN_PR_V5 变量组合新变量进一步降维 | 随机森林权重筛选变量
   - 经过特征选择（TOP12），通过SMOTE方法平衡正负样本（1:1）。AUC: 0.74977
-  
+------
+- [x] Version 6: CMTR_CHURN_PR_V6 SMOTE采样 | LightGBM | GridSearchCV | K折交叉验证 | 模型融合（《机器学习》周志华）
+  - 经过数据清洗后，使用SMOTE平衡正负样本（3:1 -> 1:1），由于剔除变量使得AUC显著下降，故根据想系数热力图，剔除多重共线性变量。
+  - 使用K折交叉验证和GridSearchCV寻找LightGBM最优参数，训练集和验证集AUC均大于92%，但是提交的预测结果只显示0.6613，依旧存在过拟合现象。
+  - 使用模型融合，第一层LightGBM + XGB计算加权平均值，将加权平均值输入LogisticRegression预测结果，最终提交平台的AUC:0.6889。
+------
+- 总结：虽然从数据清洗、变量筛选、调参、调整分类效果最好的模型、尝试模型融合，比赛结果依旧不理想，但是过程中学到了很多，并且了解了AutoML的包，并且学习到了模型融合的思想。还是有进步的。
 
 
 
